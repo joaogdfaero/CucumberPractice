@@ -38,6 +38,9 @@ public class StepsAmazon {
 	@Então("vou verificar se o valor está acima de {string}")
 	public void vou_verificar_se_o_valor_está_acima_de(String valorProduto) {
         ResultadoBusca resultadobusca = New ResultadoBusca(driver);
-        resultadobusca.verificaValor(valorProduto);
+        resultadobusca.clicarProduto();
+        double valor1 = Double.parseDouble(resultadobusca.retornaValor());
+        double valor2 = Double.parseDouble(valorProduto);
+        Assert.assertTrue(valor1 > valor2);
     }
 }
